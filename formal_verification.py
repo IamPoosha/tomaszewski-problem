@@ -43,7 +43,7 @@ def prawitz_bound(a1, x, T, q):
     # estimation of the sum of the integrals
     return (S1[0] + S2[0] + S3[0] + S4)
 
-# Aids the proof of Lemma 4.4
+# Aids the proof of Lemma 4.6
 def berry_esseen_a1_leq_022(prawitz_bounder):
     xs = [0.35, 0.358, 0.366, 0.374, 0.38, 0.386, 0.39, 0.395, 0.399, 0.403,
           0.406, 0.409, 0.412, 0.415, 0.417, 0.419, 0.421, 0.423, 0.425, 0.427,
@@ -141,9 +141,17 @@ print("slow check passed")
 
 # 
 # Relevant values, computed with higher accuracy.
+# Denote by E(a_1, x) the right hand side of (150), applied for specific a_1, x.
 #
-# 
-## Denote by E(a_1, x) the right hand side of (150), applied for specific a_1, x.
+#
+# Note that:
+# E(0.31, 1) < 0.9115,
+# E(0.22, 1.65) + Pr[Z > 1.65] < 0.084,
+#         where Z ~ N(0,1) a standard normal variable,
+# E(0.22, xs[i]) + Pr[Z in (xs[i], xs[i+1])] < 0.084,
+#         with xs as in berry_esseen_a1_leq_022, and i in [0, 92].
+#
+##
 ##
 ## E(0.31, 1) = 0.09114105 \pm 10^{-8},
 ##
